@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+
+<header class="header">
+    <div class="container" id="navbar">
+        <div class="logo">
+            <img src="static/2560px-International_Pokémon_logo.svg.png"">
+        </div>
+
+        <nav class="navbar" id="nav">
+            <a href="#home"><img align="center" src="/static/007.webp" >Inicial</a>
+            <a class="name2" href="#pokedex"><img align="center" src="/static/004.webp"> Pokédex</a>
+            <a class="name3" href="#contacto"><img align="center" src="/static/001.webp">Contacto </a>
+        </nav>
+
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+    </div>
+</header>
+
+<!-- HOME -->
+<section class="home" id="home">
+    
+    <div class="home-container">
+        <p>¿Cual es tu pokemon inicial?</p>
+            <div class="row">
+
+                <div class="poke1">
+                    <a><img src="/static/tumblr_ma4ft6OXxw1rfjowdo1_500.gif">
+                    <button class="btn" data-modal-target="modal1">Seleccionar</button></a>
+                    <div class="modal" id="modal1">
+                        <div class="modal-content">
+                            <span class="modal-close">&times;</span>
+                            <h1>¡Escogiste a Squirtle!</h1>
+                            <p>Squirtle y Charmander siempre han sido dos de las elecciones que más rivalidades han levantado a lo largo de la historia
+                            de Pokémon.
+                            </p></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poke2">
+                    <a><img src="/static/EcstaticGloomyCavy-max-1mb.gif"></a>
+                    <button class="btn" data-modal-target="modal2">Seleccionar</button></a>
+                    <div class="modal" id="modal2">
+                        <div class="modal-content">
+                            <span class="modal-close">&times;</span>
+                            <h1>¡Escogiste a Charmander!</h1>
+                            <p>Charmander es el Pokémon inicial más popular de todos los tiempos, y así lo certifican los movimientos de Game Freak con
+                            su línea evolutiva.
+                            </p></a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="poke3">
+                    <a><img src="/static/bulbasaur-pokemon.gif">
+                    <button class="btn" data-modal-target="modal3">Seleccionar</button></a></a>
+                    <div class="modal" id="modal3">
+                        <div class="modal-content">
+                            <span class="modal-close">&times;</span>
+                            <h1>¡Escogiste a Bulbasaur!</h1>
+                            <p>El rey de los tipo planta hasta la llegada del simpático Rowlet. La primera generación de Pokémon es la más valorada por
+                            los seguidores.
+                            </p></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</section>
+
+
+<!-- POKEDEX -->
+<section class="pokedex" id="pokedex">
+    <h1>Pokédex</h1>
+    <p>Introduce el nombre del pokemon</p>
+    <form action="" onsubmit="searchPokemon(event)">
+        <input type="text" name="pokemon" autocomplete="off">
+    </form>
+    <div data-poke-card class="poke-card">
+        <div data-poke-name></div>
+        <div data-poke-img-container class="img-container">
+            <img data-poke-img class="poke-img" src="/static/png_pokeball_43550.png">
+        </div>
+        <div data-poke-id></div>
+        <div data-poke-types class="poke-types"></div>
+        <div data-poke-stats class="poke-stats"></div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+    <div class="container">
+    
+        <h2>Contacto</h2>
+          
+        <div class="row">
+            <div class="contact-form">
+
+                <form id="form">
+                    <div class="row">
+                        <div class="form-item col-1 ">
+                            <div class="form-group">
+                                <input class="blue" name="name" type="text" placeholder="Nombre" required>
+                            </div>
+                        </div>
+                        <div class="form-item col-1">
+                            <div class="form-group">
+                                <input class="blue" name="email" type="email" required placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-item col-2">
+                            <div class="form-group">
+                                <input type="text" class="from-control red" placeholder="Asunto" name="subject" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-item col-2 ">
+                            <div class="form-group">
+                                <textarea name="message" class="form-control green" id="" placeholder="Mensaje"
+                                    required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-item col-2 ">
+                            <input type="submit" id="button" value="Enviar">
+                        </div>
+                    </div>
+                </form>
+
+                <script type="text/javascript"
+                    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+                <script type="text/javascript">
+                    emailjs.init('user_ubrABRck2ts8ggUxb2uR3')
+                </script>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="footer-basic">
+        <div class="social">
+            <a href="https://www.instagram.com/froy_mateos/?hl=es-la" target="_blank"><i
+                        class='bx bxl-instagram'></i></i></a>
+            <a href="https://www.linkedin.com/in/froylan-mateos-sanchez-130706195/" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
+            <a href="https://froylanmateos.com/" target="_blank"><i class='bx bxl-dribbble'></i></a>
+                        
+        </div>
+    <p class="copyright">Derechos Resevados a Froylan Mateos © 2022</p>
+</footer>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+
+<!-- EMAIL SCRIPT-->
+<script>
+    const btn = document.getElementById('button');
+
+    document.getElementById('form')
+        .addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            btn.value = 'Enviando...';
+
+            const serviceID = 'default_service';
+            const templateID = 'template_qijkxrl';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.value = 'Enviar';
+                    alert('Mensaje enviado');
+                }, (err) => {
+                    btn.value = 'Enviar';
+                    alert(JSON.stringify(err));
+                });
+        });
+</script>
+
+</html>
