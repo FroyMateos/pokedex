@@ -122,5 +122,5 @@ const renderPokemonStats = stats => {
 }
 const renderNotFound = () => {
     pokeName.textContent = 'No encontrado';
-    pokeImg.setAttribute('src', '/static/png_pokeball_43550.png');
+    pokeImg.setAttribute('src', 'static/png_pokeball_43550.png');
 }
